@@ -2,7 +2,9 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <p>Randostaurant</p>
+    <div>
+      <p>Randostaurant</p>
+    </div>
   )
 };
 
