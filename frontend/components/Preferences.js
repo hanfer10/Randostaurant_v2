@@ -1,8 +1,12 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const Preferences = () => {
   return (
-    <p>Preferences page</p>
+    <div>
+      <p>Preferences page</p>
+      <Button href="/restaurant">Where Am I Eating?</Button>
+    </div>
   )
 };
 
