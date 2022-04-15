@@ -1,7 +1,14 @@
-import Axios from 'axios';
+import { createSlice } from  '@reduxjs/toolkit';
 
-const initialState = {};
+export const preferencesSlice = createSlice({
+  name: 'preferences',
+  initialState: {},
+  reducers: {
+    setPreferences: (state, action) => {
+      state.preferences = action.payload
+    }
+  }
+});
 
-export default function preferenceReducer(state = initialState, action) {
-  return state;
-};
+export const { setPreferences } = preferencesSlice.actions;
+export default preferencesSlice.reducer;
