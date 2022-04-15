@@ -1,11 +1,11 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const Home = () => {
   return (
-    <div className="page">
-      <div>
-        <p>Randostaurant</p>
-      </div>
+    <div>
+      <p>Randostaurant</p>
+      <Button href="/preferences">Preferences</Button>
     </div>
   )
 };
