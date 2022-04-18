@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <p>Randostaurant</p>
-      <Button href="/preferences">Preferences</Button>
+      <Button variant="dark" href="/preferences">Preferences</Button>
     </div>
   )
 };

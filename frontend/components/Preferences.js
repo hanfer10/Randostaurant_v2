@@ -1,13 +1,82 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setPreferences } from '../redux/preference';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router';
 
-const Preferences = () => {
+export const Preferences = () => {
+  const [distance, setDistance] = useState(10);
+  const [price, setPrice] = useState([]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const onDistanceChanged = event => setDistance(event.target.value);
+
+  const onPriceChanged = event => {
+    price.push(event.target.name);
+    setPrice(price);
+  }
+
+  const onSubmit = () => {
+    if (distance && price) {
+      dispatch(
+        setPreferences({
+          distance,
+          price
+        })
+      )
+      setDistance('');
+      setPrice('');
+    }
+    navigate("/restaurant");
+  }
+
   return (
-    <div>
-      <p>Preferences page</p>
-      <Button href="/restaurant">Where Am I Eating?</Button>
-    </div>
+    <Form>
+      <Form.Group className="mb-3" controlId="distance">
+        <Form.Label>Distance:</Form.Label>
+        <Form.Select onChange={onDistanceChanged}>
+          <option>Select a distance</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </Form.Select>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="price">
+        <Form.Label>Price:</Form.Label>
+        <Form.Check
+          onChange={onPriceChanged}
+          inline
+          label="low"
+          name="low"
+          type="checkbox"
+        />
+        <Form.Check
+          onChange={onPriceChanged}
+          inline
+          label="medium"
+          name="medium"
+          type="checkbox"
+        />
+        <Form.Check
+          onChange={onPriceChanged}
+          inline
+          label="high"
+          name="high"
+          type="checkbox"
+        />
+        <Form.Check
+          onChange={onPriceChanged}
+          inline
+          label="extreme"
+          name="extreme"
+          type="checkbox"
+        />
+      </Form.Group>
+      <Button onClick={onSubmit} variant="dark">Where Am I Eating?</Button>
+    </Form>
   )
 };
-
-export default Preferences;
