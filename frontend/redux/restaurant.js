@@ -5,7 +5,7 @@ export const fetchRestaurant = createAsyncThunk('restaurant/fetchRandomRestauran
   const preferences = getState().preferences
 
   const restaurant = await axios.get('/api/restaurant', {
-    headers: {
+    params: {
       preferences: preferences
     }
   })
