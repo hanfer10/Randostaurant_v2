@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/register": "^7.17.0",
+    "@googlemaps/google-maps-services-js": "^3.3.13",
     "@googlemaps/js-api-loader": "^1.13.8",
     "@reduxjs/toolkit": "^1.8.1",
     "axios": "^0.26.0",
