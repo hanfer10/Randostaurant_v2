@@ -2,11 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchRestaurant = createAsyncThunk('restaurant/fetchRandomRestaurant', async (_something, { getState }) => {
-  const preferences = getState().preferences
-
+  const preferences = getState().preferences;
+  const location = getState().location;
   const restaurant = await axios.get('/api/restaurant', {
     params: {
-      preferences: preferences
+      preferences: preferences,
+      location: location
     }
   })
 });

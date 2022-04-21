@@ -12,6 +12,8 @@ router.get('/', async (req, res, next) => {
   const client = new Client({});
   const preferences = req.query.preferences;
   let distance = preferences.distance * 1609.34;
+  const latitude = req.query.location.latitude;
+  const longitude = req.query.location.longitude;
   let prices = [];
   const price = JSON.parse(preferences.price);
   if (price.low) {
@@ -29,7 +31,7 @@ router.get('/', async (req, res, next) => {
   client
         .placesNearby({
           params: {
-            //location:
+            location: { lat: latitude, lng: longitude },
             radius: `${distance}`,
             key: process.env.google_maps_api,
             type: ['restaurant'],
