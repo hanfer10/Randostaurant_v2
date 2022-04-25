@@ -1,7 +1,7 @@
 {
   "name": "randostaurant",
   "version": "1.0.0",
-  "description": "An application that tell you where you're eating",
+  "description": "An application that tells you where you're eating",
   "main": "index.js",
   "scripts": {
     "start": "npm run build-watch & npm run start-server",
