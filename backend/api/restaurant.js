@@ -9,14 +9,12 @@ const getRandomRestaurant = function (restaurants, prices) {
 }
 
 router.get('/', async (request, response, next) => {
-  console.log("We made it!")
   const client = new Client({});
   const {preferences} = JSON.parse(request.query.preferences);
   const location = JSON.parse(request.query.location);
   let distance = preferences.distance * 1609.34;
   const latitude = location.latitude;
   const longitude = location.longitude;
-  console.log(latitude, longitude)
   let prices = [2];
   const price = preferences.price;
   if (price.low) {
@@ -31,7 +29,6 @@ router.get('/', async (request, response, next) => {
   if (price.extreme) {
     prices.push(4);
   };
-  console.log(prices)
   client
         .placesNearby({
           params: {
@@ -45,7 +42,6 @@ router.get('/', async (request, response, next) => {
         .then((apiResponse) => {
           const randomRestaurant = getRandomRestaurant(apiResponse.data.results, prices);
           response.json(randomRestaurant);
-          console.log("This is where you're eating", randomRestaurant.name);
         })
         .catch((error) => {
           console.log("ERROR ERROR", error);
