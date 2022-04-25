@@ -27,7 +27,7 @@ export const Preferences = () => {
         })
       )
       setDistance('');
-      setPrice('');
+      setPrice([]);
     }
     navigate("/restaurant");
   }
