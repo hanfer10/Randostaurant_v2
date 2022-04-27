@@ -2,10 +2,17 @@ import { createSlice } from  '@reduxjs/toolkit';
 
 export const preferencesSlice = createSlice({
   name: 'preferences',
-  initialState: {},
+  initialState: {
+    price: {
+      low: false,
+      medium: false,
+      high: false,
+      extreme: false,
+    },
+  },
   reducers: {
     setPreferences: (state, action) => {
-      state.preferences = action.payload
+      return action.payload;
     }
   }
 });
