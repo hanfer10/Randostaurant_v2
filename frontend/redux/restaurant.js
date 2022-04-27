@@ -20,7 +20,12 @@ export const restaurantSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {},
+  reducers: {
+    clearRestaurant: (state, action) => {
+      state.restaurant = {};
+      state.status = 'idle';
+    }
+  },
   extraReducers: {
     [fetchRestaurant.pending]: (state, action) => {
       state.status = 'loading';
@@ -36,5 +41,5 @@ export const restaurantSlice = createSlice({
   }
 });
 
-export const { setRestaurant } = restaurantSlice.actions;
+export const { clearRestaurant } = restaurantSlice.actions;
 export default restaurantSlice.reducer;

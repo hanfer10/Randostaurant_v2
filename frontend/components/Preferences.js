@@ -20,7 +20,6 @@ export const Preferences = () => {
     } else {
       price[name] = false;
     }
-    console.log("price", price);
     setPrice(price);
   }
 
