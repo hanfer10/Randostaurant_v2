@@ -30,6 +30,8 @@ if (restaurantStatus === 'loading') {
   content = (
     <div>
       <p>This is where you're eating: {restaurant.name}</p>
+      <p>{restaurant.vicinity}</p>
+      <p>Rating: {restaurant.rating}</p>
       <Button variant="dark" onClick={onClick}>Reroll</Button>
     </div>
   )
