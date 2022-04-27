@@ -18,7 +18,7 @@ useEffect(() => {
 
 const onClick = (event) => {
   event.preventDefault();
-  dispatch(clearRestaurant({}));
+  dispatch(clearRestaurant());
   navigate('/preferences');
 };
 
@@ -27,14 +27,18 @@ let content;
 if (restaurantStatus === 'loading') {
   content = <p>Loading</p>
 } else if (restaurantStatus === 'succeeded') {
-  content = <p>This is where you're eating: {restaurant.name}</p>
+  content = (
+    <div>
+      <p>This is where you're eating: {restaurant.name}</p>
+      <Button variant="dark" onClick={onClick}>Reroll</Button>
+    </div>
+  )
 } else if (restaurantStatus === 'failed') {
   content = <div>{error}</div>
 }
   return (
     <div>
       {content}
-      <Button variant="dark" onClick={onClick}>Reroll</Button>
     </div>
   )
 };

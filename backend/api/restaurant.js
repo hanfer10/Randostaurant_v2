@@ -10,12 +10,12 @@ const getRandomRestaurant = function (restaurants, prices) {
 
 router.get('/', async (request, response, next) => {
   const client = new Client({});
-  const {preferences} = JSON.parse(request.query.preferences);
+  const preferences = JSON.parse(request.query.preferences);
   const location = JSON.parse(request.query.location);
   let distance = preferences.distance * 1609.34;
   const latitude = location.latitude;
   const longitude = location.longitude;
-  let prices = [2];
+  let prices = [];
   const price = preferences.price;
   if (price.low) {
     prices.push(1);

@@ -22,7 +22,8 @@ export const restaurantSlice = createSlice({
   },
   reducers: {
     clearRestaurant: (state, action) => {
-      state.restaurant = action.payload
+      state.restaurant = {};
+      state.status = 'idle';
     }
   },
   extraReducers: {
