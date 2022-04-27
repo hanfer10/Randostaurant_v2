@@ -21,8 +21,8 @@ export const restaurantSlice = createSlice({
     error: null,
   },
   reducers: {
-    setRestaurant: (state, action) => {
-      state.restaurant = {}
+    clearRestaurant: (state, action) => {
+      state.restaurant = action.payload
     }
   },
   extraReducers: {
@@ -40,5 +40,5 @@ export const restaurantSlice = createSlice({
   }
 });
 
-export const { setRestaurant } = restaurantSlice.actions;
+export const { clearRestaurant } = restaurantSlice.actions;
 export default restaurantSlice.reducer;

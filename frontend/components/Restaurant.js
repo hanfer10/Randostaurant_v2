@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fetchRestaurant } from '../redux/restaurant';
+import { fetchRestaurant, clearRestaurant } from '../redux/restaurant';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router';
@@ -18,6 +18,7 @@ useEffect(() => {
 
 const onClick = (event) => {
   event.preventDefault();
+  dispatch(clearRestaurant({}));
   navigate('/preferences');
 };
 
