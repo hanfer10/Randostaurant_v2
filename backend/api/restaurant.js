@@ -42,11 +42,24 @@ router.get('/', async (request, response, next) => {
         .then((apiResponse) => {
           const randomRestaurant = getRandomRestaurant(apiResponse.data.results, prices);
           response.json(randomRestaurant);
+        //   client
+        //         .directions({
+        //           params: {
+        //             origin: { lat: latitude, lng: longitude },
+        //             destination: { place_id: randomRestaurant.place_id },
+        //             travelMode: 'DRIVING',
+        //             key: process.env.google_maps_api,
+        //           },
+        //           timeout: 1000,
+        //         })
+        //         .then((directionsResponse) => {
+        //           console.log(directionsResponse.data);
+        //         })
         })
         .catch((error) => {
           console.log("ERROR ERROR", error);
           response.sendStatus(400);
-        })
+        });
 });
 
 module.exports = router;
