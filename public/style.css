@@ -1,4 +1,42 @@
 .body {
-  background-color: gray;
-  color: azure;
+  background-color: #8ECAE6;
+  color: #023047;
+}
+ nav {
+   background-color: #023047;
+   color: #ffb703;
+ }
+
+/* Home Page */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  height: 10vh;
+  width: 30vw;
+}
+
+.button {
+  background-color: #ffb703;
+  color: #023047;
+}
+
+/* Preferences Page */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Restaurant Page */
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }

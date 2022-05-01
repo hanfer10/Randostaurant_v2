@@ -22,9 +22,13 @@ const Home = () => {
     navigate('/preferences');
   }
   return (
-    <div>
-      <p>Randostaurant</p>
-      <Button variant="dark" onClick={onClick}>Preferences</Button>
+    <div className='home'>
+      <img
+        className='logo'
+        src='/images/randostaurant-logo.png'
+        alt="hellos"
+      ></img>
+      <Button className='button' variant='dark' onClick={onClick}>Preferences</Button>
     </div>
   )
 };

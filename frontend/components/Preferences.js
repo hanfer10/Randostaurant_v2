@@ -38,7 +38,12 @@ export const Preferences = () => {
   }
 
   return (
-    <Form>
+    <Form className='form'>
+      <img
+        className='logo'
+        src='/images/randostaurant-logo.png'
+        alt="hellos"
+      ></img>
       <Form.Group className="mb-3" controlId="distance">
         <Form.Label>Distance:</Form.Label>
         <Form.Select onChange={onDistanceChanged}>
@@ -81,7 +86,7 @@ export const Preferences = () => {
           type="checkbox"
         />
       </Form.Group>
-      <Button onClick={onSubmit} variant="dark">Where Am I Eating?</Button>
+      <Button onClick={onSubmit} className='button' variant="dark">Where Am I Eating?</Button>
     </Form>
   )
 };

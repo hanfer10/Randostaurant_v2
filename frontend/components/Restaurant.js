@@ -25,12 +25,23 @@ const onClick = (event) => {
 let content;
 
 if (restaurantStatus === 'loading') {
-  content = <p>Loading</p>
+  content = (
+    <div className='restaurant'>
+      <p>Loading</p>
+    </div>
+  )
 } else if (restaurantStatus === 'succeeded') {
   content = (
-    <div>
+    <div className='restaurant'>
+      <img
+        className='logo'
+        src='/images/randostaurant-logo.png'
+        alt="hellos"
+      ></img>
       <p>This is where you're eating: {restaurant.name}</p>
-      <Button variant="dark" onClick={onClick}>Reroll</Button>
+      <p>{restaurant.vicinity}</p>
+      <p>Rating: {restaurant.rating}</p>
+      <Button className='button' variant="dark" onClick={onClick}>Reroll</Button>
     </div>
   )
 } else if (restaurantStatus === 'failed') {
