@@ -1,11 +1,20 @@
 .body {
   background-color: #8ECAE6;
   color: #023047;
+  font-family: "Teko";
+  font-size: 2rem;
+  font-weight: 300;
 }
- nav {
+.nav {
    background-color: #023047;
    color: #ffb703;
  }
+
+ .label {
+   margin-right: 1vw;
+ }
+
+
 
 /* Home Page */
 .home {
@@ -16,8 +25,9 @@
 }
 
 .logo {
-  height: 10vh;
-  width: 30vw;
+  height: 15vh;
+  width: 55vw;
+  margin-bottom: 2.5vh;
 }
 
 .button {
@@ -33,10 +43,20 @@
   align-items: center;
 }
 
+.distance {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Restaurant Page */
 .restaurant {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+#restaurant {
+  font-size: 6rem;
+  font-weight: 500;
 }

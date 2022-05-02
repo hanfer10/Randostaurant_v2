@@ -23,14 +23,9 @@ const onClick = (event) => {
 };
 
 let content;
+let price;
 
 if (restaurantStatus === 'loading') {
-  content = (
-    <div className='restaurant'>
-      <p>Loading</p>
-    </div>
-  )
-} else if (restaurantStatus === 'succeeded') {
   content = (
     <div className='restaurant'>
       <img
@@ -38,9 +33,32 @@ if (restaurantStatus === 'loading') {
         src='/images/randostaurant-logo.png'
         alt="hellos"
       ></img>
-      <p>This is where you're eating: {restaurant.name}</p>
+      <p>Loading</p>
+    </div>
+  )
+} else if (restaurantStatus === 'succeeded') {
+  price = restaurant.price_level;
+  if (price === 1) {
+    price = '$'
+  } else if (price === 2) {
+    price = '$$'
+  } else if (price === 3) {
+    price = '$$$'
+  } else if (price === 4) {
+    price = '$$$$'
+  }
+  content = (
+    <div className='restaurant'>
+      <img
+        className='logo'
+        src='/images/randostaurant-logo.png'
+        alt="hellos"
+      ></img>
+      <p>This is where you're eating:</p>
+      <h1 id='restaurant'>{restaurant.name}</h1>
       <p>{restaurant.vicinity}</p>
-      <p>Rating: {restaurant.rating}</p>
+      <p>Rating:  {restaurant.rating}</p>
+      <p>Price: {price}</p>
       <Button className='button' variant="dark" onClick={onClick}>Reroll</Button>
     </div>
   )

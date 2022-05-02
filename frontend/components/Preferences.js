@@ -44,8 +44,8 @@ export const Preferences = () => {
         src='/images/randostaurant-logo.png'
         alt="hellos"
       ></img>
-      <Form.Group className="mb-3" controlId="distance">
-        <Form.Label>Distance:</Form.Label>
+      <Form.Group className="mb-3 distance" controlId="distance">
+        <Form.Label className='label'>Distance:</Form.Label>
         <Form.Select onChange={onDistanceChanged}>
           <option>Select a distance</option>
           <option value="5">5</option>
@@ -56,7 +56,7 @@ export const Preferences = () => {
         </Form.Select>
       </Form.Group>
       <Form.Group className="mb-3" controlId="price">
-        <Form.Label>Price:</Form.Label>
+        <Form.Label className='label'>Price:</Form.Label>
         <Form.Check
           onChange={onPriceChanged}
           inline
