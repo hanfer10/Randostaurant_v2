@@ -26,13 +26,16 @@
 
 .logo {
   height: 15vh;
-  width: 55vw;
+  width: 60vw;
   margin-bottom: 2.5vh;
 }
 
 .button {
   background-color: #ffb703;
   color: #023047;
+  height: 5vh;
+  width: 20vw;
+  font-size: 2rem;
 }
 
 /* Preferences Page */
